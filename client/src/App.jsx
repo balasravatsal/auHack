@@ -7,7 +7,7 @@ import '@fontsource/roboto/700.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Authentication/Login.jsx";
 import Home from "./Pages/Home/Home.jsx";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import {SignedIn, SignedOut, SignInButton, SignOutButton, UserButton} from "@clerk/clerk-react";
 function App() {
 
   return (
@@ -20,15 +20,15 @@ function App() {
         {/*    </Routes>*/}
         {/*</BrowserRouter>*/}
           <SignedOut>
-             <Home/>
-              <SignInButton />
+
+              <Home/>
+              {/*<SignInButton />*/}
           </SignedOut>
           <SignedIn>
-             
-
+              <SignOutButton />
           </SignedIn>
       </header>
     )
 }
 
-export default App;
+export default App
